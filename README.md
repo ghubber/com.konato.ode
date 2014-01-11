@@ -1,9 +1,9 @@
-# com.konato.ode = An Ordinary Differentials Equations Solvers library for Clojure #
+# com.konato.ode = An Ordinary Differentials Equations Solvers library for Clojure
 
-com.konato.ode is an ordinary differentials equations solvers and simulation library in Clojure.  
+com.konato.ode is an ordinary differentials equations solvers and simulation library in Clojure.
 It does implements several fixed steps solvers: Euler, an Euler modified version, Runge-Kutta order 4 and a Runge-Kutta using parameters to implement RK4, Runge-Kutta-Fehlberg. It does implement a variable step ODE solver based on the popular rfk45 method. Others RK fixed or variable methods can be easily implemented using the RKP method. Functions are provided to convert State Space and Transfer functions to ODE who can be used by the system.
 
-Methods based on: Gerald-Wheatley, 2003, Applied Numerical Analysis, Seventh Edition, 
+Methods based on: Gerald-Wheatley, 2003, Applied Numerical Analysis, Seventh Edition,
 Pearson Education, ISBN 0-321-13304-8.
 
 Copyright (c) 2009 Stephane Rousseau (stephaner gmail). All rights reserved.
@@ -11,16 +11,16 @@ Copyright (c) 2009 Stephane Rousseau (stephaner gmail). All rights reserved.
 [com.konato.ode release info](http://www.konato.com/2009/07/08/com-konato-ode)
 
 The use and distribution terms for this software are covered by the Eclipse Public License 1.0,
-which can be found in the file epl-v10.html at the root of this distribution. 
+which can be found in the file epl-v10.html at the root of this distribution.
 By using this software in any fashion, you are agreeing to be bound by the terms of this license.
 You must not remove this notice, or any other, from this software.
 
-# How To Use It? ##
+# How To Use It?
 
 Create a JAR by running `ant` and add the location of the jar file to
 your CLASSPATH.
 
-# Functions ##
+# Functions
 
 
 Top-Level functions for user
@@ -56,17 +56,17 @@ Auxiliary Functions
 * `keepdecim`    "Keep a number of decimals."
 
 
-# Examples ##
+# Examples
 
-Tutorials are available at my blog [stephaner Blog](http://www.konato.com/blog/). 
+Tutorials are available at my blog [stephaner Blog](http://www.konato.com/blog/).
 
-The 'src/examples' directory contains some examples to get you started. 
+The 'src/examples' directory contains some examples to get you started.
 
 First example is a classical Damped Harmonic Oscillator.
 It shows usage of three methods to describe and simulate a system : ODE system, State variables representation and transfer function.
 Based on example 1.14 of "Interactive Dynamic System Simulation (G.A. Korn, 1989)
 
-Second example is the classic pen pendulum. 
+Second example is the classic pen pendulum.
 Based on [An Approach to Solving Ordinary Differential Equations (I.Urieli, Winter 2002)](http://www.ent.ohiou.edu/~urieli/odes/odes.html).
 
 Third example is a three equations system used in other implementation.
@@ -84,14 +84,14 @@ The 'src/com/konato/ode/tests' directory contains tests used by example in the r
 
 # Exporting data to gnuplot ##
 
-You may use the following savedata function to export data to an external file. It need use of a clojure.contrib.duck-streams library. 
+You may use the following savedata function to export data to an external file. It need use of a clojure.contrib.duck-streams library.
 
     (use 'clojure.contrib.duck-streams)
     (defn savedata
-    "Copyright (c) 2009 Stephane Rousseau (stephaner konato.com). All rights reserved.  
+    "Copyright (c) 2009 Stephane Rousseau (stephaner konato.com). All rights reserved.
 
     The use and distribution terms for this software are covered by the Eclipse Public License 1.0,
-    which can be found in the file epl-v10.html at the root of this distribution. 
+    which can be found in the file epl-v10.html at the root of this distribution.
     By using this software in any fashion, you are agreeing to be bound by the terms of this license.
     You must not remove this notice, or any other, from this software."
     [filename & more]
@@ -99,7 +99,7 @@ You may use the following savedata function to export data to an external file. 
        sqs more
        onetime true
       ]
-      (if (empty? (first sqs)) 
+      (if (empty? (first sqs))
           nil
 	      (let [toprn (map #(first %) sqs)]
 	          (if onetime
